@@ -16,6 +16,8 @@ import { useStyles } from "./style.js"
 import AggregatedSelector from "./components/Body/Aggregated_Selector/AggregatedSelector"
 import AggregatedOverall from "./components/Body/Aggregated_Overall/AggregatedOverall"
 import MapPage from "./components/Body/MapPage/MapPage"
+import { ShadThemeProvider } from "@/components/theme-provider"
+import { Button } from "@/components/ui/button"
 
 /**
  * @name - App
@@ -72,6 +74,7 @@ function App() {
   }
 
   return (
+    <ShadThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <Box bgcolor={themeStatus ? "rgb(154, 166, 187)" : "rgb(41, 49, 62)"}>
       <ThemeProvider theme={theme}>
         <ThemeContext.Provider value={{ theme, themeStatus }}>
@@ -97,6 +100,7 @@ function App() {
         </ThemeContext.Provider>
       </ThemeProvider>
     </Box>
+    </ShadThemeProvider>
   )
 }
 

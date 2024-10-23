@@ -46,7 +46,6 @@ const Header = ({ handleChange, themeStatus }) => {
                 noWrap
                 variant='h5'
                 >
-                className="text-red-500"
                 Portal 2 Leaderboards
               </Typography>
             </Grid>
