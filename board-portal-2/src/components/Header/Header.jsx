@@ -42,9 +42,11 @@ const Header = ({ handleChange, themeStatus }) => {
             <Grid item>
               <Typography
                 color='textPrimary'
-                className={classes.title}
+                className={`text-red-500 ${classes.title}`}
                 noWrap
-                variant='h5'>
+                variant='h5'
+                >
+                className="text-red-500"
                 Portal 2 Leaderboards
               </Typography>
             </Grid>
