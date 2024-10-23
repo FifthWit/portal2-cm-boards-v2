@@ -6,7 +6,7 @@ import spIcon from "./img/Singleplayer.png"
 import coopIcon from "./img/Co-op.png"
 import React from "react"
 import { Link } from "react-router-dom"
-import DropdownSP from "./DropdownSP.js"
+import DropdownSP from "./DropdownSP.jsx"
 
 /**
  * @name -

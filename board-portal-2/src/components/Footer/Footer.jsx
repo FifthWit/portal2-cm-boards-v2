@@ -1,11 +1,11 @@
-import donatorsIcon from "./img/cakeicon.png"
-import aboutIcon from "./img/cupcake.png"
-import discordIcon from "./img/discord_noborder.png"
-import githubIcon from "./img/github.png"
-import wallOfShameIcon from "./img/wallofshame.png"
-import { Grid, AppBar, Toolbar, Typography, Button } from "@material-ui/core"
-import { BrowserRouter, Link } from "react-router-dom"
-import { useStyles, CustomButton } from "./style.js"
+import donatorsIcon from "./img/cakeicon.png";
+import aboutIcon from "./img/cupcake.png";
+import discordIcon from "./img/discord_noborder.png";
+import githubIcon from "./img/github.png";
+import wallOfShameIcon from "./img/wallofshame.png";
+import { Grid, AppBar, Toolbar, Typography, Button } from "@material-ui/core";
+import { BrowserRouter, Link } from "react-router-dom";
+import { useStyles, CustomButton } from "./style.js";
 
 /**
  * @name - Footer
@@ -19,9 +19,9 @@ import { useStyles, CustomButton } from "./style.js"
  */
 
 const Footer = () => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
-    <div id='container-footer' className='container' className={classes.root}>
+    <div id='container-footer' className={classes.root}>
       <AppBar color='secondary' position='static'>
         <Toolbar className={classes.toolbar}>
           <Grid container justify='space-around' alignContent='center'>
@@ -55,7 +55,7 @@ const Footer = () => {
         </Toolbar>
       </AppBar>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

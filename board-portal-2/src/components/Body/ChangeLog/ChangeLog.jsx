@@ -5,7 +5,7 @@ import { useStyles } from "./style.js"
 import ScoreLists from "./ScoreLists"
 import Graph from "./Graph"
 import Filters from "./Filters"
-import { ThemeContext } from "../../../App.js"
+import { ThemeContext } from "../../../App.jsx"
 
 const ENDPOINT = "http://localhost:8080/api/v1/changelog"
 

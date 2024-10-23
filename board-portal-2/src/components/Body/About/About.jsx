@@ -1,8 +1,9 @@
-import { div } from "@material-ui/core"
+// import { div } from "@material-ui/core"
 import React from "react"
 import { ThemeContext } from "../../../App"
 import "./about.css"
 import { useStyles } from "./style"
+
 /**
  * @name - About
  * @desc - Page for the "about" section. Contains formula for calculating

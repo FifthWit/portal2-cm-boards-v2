@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App"
+import App from "./App.jsx"
 import CssBaseline from "@material-ui/core/CssBaseline"
 // import theme from "./Theme"
 

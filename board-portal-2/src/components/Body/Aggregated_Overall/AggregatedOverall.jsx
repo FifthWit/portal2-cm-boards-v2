@@ -12,7 +12,7 @@ import { CustomIconButton, useStyles } from "./style"
 import imgOverall from "./img/overall.jpg"
 import ScoreList from "./ScoreList"
 import TimeList from "./TimeList"
-import { ThemeContext } from "../../../App.js"
+import { ThemeContext } from "../../../App.jsx"
 
 const AggregatedOverall = () => {
   const classes = useStyles()

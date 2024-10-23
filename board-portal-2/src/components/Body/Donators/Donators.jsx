@@ -1,5 +1,5 @@
 import { Avatar, Grid, List, ListItem, Typography } from "@material-ui/core"
-import { useStyles, CustomButton } from "./style.js"
+import { useStyles } from "./style.js"
 import donatorImg from "./img/portal_2_birthday_by_curtisru-d47w3js.png"
 import Data from "./example.json"
 import React from "react"

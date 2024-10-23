@@ -6,7 +6,7 @@ import {
   Typography,
   Box
 } from "@material-ui/core"
-import { useStyles, CustomButton } from "./style.js"
+import { useStyles } from "./style.js"
 import React from "react"
 import Data from "./example.json"
 
