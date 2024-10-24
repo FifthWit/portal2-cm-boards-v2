@@ -38,12 +38,7 @@ const TimeList = props => {
 
       {/* sepp here */}
       {/* <Divider /> */}
-      <ListItem
-        style={{
-          backgroundColor: props.themeStatus
-            ? "rgb(154, 166, 187)"
-            : "rgb(41, 49, 62)"
-        }}>
+      <ListItem>
         <ListItemAvatar>
           <Avatar></Avatar>
         </ListItemAvatar>

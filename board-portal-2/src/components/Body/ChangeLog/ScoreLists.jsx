@@ -40,16 +40,7 @@ const ScoreLists = props => {
         var mapID = JSON.parse(submission.map_id)
         index++
         return (
-          <ListItem
-            style={{
-              // hella not optimized but it works to alternate the color
-              backgroundColor:
-                index % 2 == 0
-                  ? props.theme.palette.background.paper
-                  : props.themeStatus
-                  ? "rgb(154, 166, 187)"
-                  : "rgb(41, 49, 62)"
-            }}>
+          <ListItem>
             <ListItemText
               primary={submission.time_gained}
               className={classes.cellDate}

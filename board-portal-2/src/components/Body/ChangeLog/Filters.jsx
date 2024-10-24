@@ -1,27 +1,26 @@
-import {
-  AppBar,
-  Grid,
-  Menu,
-  MenuItem,
-  TextField,
-  Toolbar,
-  Typography,
-  Button,
-  FormGroup,
-  FormControlLabel
-} from "@material-ui/core"
 import React from "react"
-import { useStyles } from "./style"
+
 
 // Shadcn
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+// Icons
+import { Search } from 'lucide-react';
  
 
 const Filters = props => {
-  const classes = useStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [anchorEl2, setAnchorEl2] = React.useState(null)
   const [nickname, setNickname] = React.useState(null)
@@ -62,83 +61,25 @@ const Filters = props => {
   }
 
   return (
-    <AppBar
-      position='static'
-      style={{
-        backgroundColor: props.themeStatus
-          ? "rgb(154, 166, 187)"
-          : "rgb(41, 49, 62)"
-      }}>
-      <Toolbar>
-        <form style={{margin: props.theme.spacing(1) }} className="w-full flex flex-row items-center">
-          {/* <TextField
-            onChange={handleNickname}
-            className={classes.textField}
-            label='Nickname'></TextField> */}
-
-            <div className="flex flex-col">
-              <Label>Nickname</Label>
-              <Input className="w-fit" placeholder="Nickname" />
-            </div>
-          <TextField
-            className={classes.textField}
-            onChange={handleSteam}
-            label='Steam Profile number'></TextField>
-          <Button
-            className={classes.buttonMenu}
-            name='el1'
-            aria-controls='simple-menu'
-            aria-haspopup='true'
-            onClick={e => setAnchorEl(e.currentTarget)}>
-            Chapters
-          </Button>
-          <Menu
-            className={classes.menu}
-            id='simple-menu'
-            name='el1'
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={() => setAnchorEl(null)}>
-            <MenuItem className={classes.menuItem} onClick={handleClose1}>
-              No Chapters
-            </MenuItem>
-            <MenuItem className={classes.menuItem} onClick={handleClose1}>
-              Chapter 1
-            </MenuItem>
-            <MenuItem className={classes.menuItem} onClick={handleClose1}>
-              Chapter 2
-            </MenuItem>
-          </Menu>
-          <Button
-            className={classes.buttonMenu}
-            name='el2'
-            aria-controls='simple-menu'
-            aria-haspopup='true'
-            onClick={e => setAnchorEl2(e.currentTarget)}>
-            Chambers
-          </Button>
-          <Menu
-            className={classes.menu}
-            id='simple-menu'
-            name='el2'
-            anchorEl={anchorEl2}
-            keepMounted
-            open={Boolean(anchorEl2)}
-            onClose={() => setAnchorEl2(null)}>
-            <MenuItem
-              value='No Chambers'
-              className={classes.menuItem}
-              onClick={handleClose2}>
-              No Chambers
-            </MenuItem>
-            <MenuItem className={classes.menuItem} onClick={handleClose2}>
-              Chamber 1
-            </MenuItem>
-            <MenuItem className={classes.menuItem} onClick={handleClose2}>
-              Chamber 2
-            </MenuItem>
-          </Menu>
+        <form className="w-full flex flex-row items-center p-4 *:m-2 dark:bg-neutral-950">
+              <Input className="w-fit dark:text-white" placeholder="Nickname" onChange={(val) => handleNickname(val)}/>
+              <Input className="w-fit dark:text-white" placeholder="SteamID" onChange={(val) => handleSteam(val)}/>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="dark:bg-neutral-950 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md dark:text-white text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">Chapters</DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>Chapters</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Chapter 1</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 2</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 3</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 4</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 5</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 6</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 7</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 8</DropdownMenuItem>
+              <DropdownMenuItem>Chapter 9</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
@@ -151,6 +92,15 @@ const Filters = props => {
               />
             }
             label='Single Player'></FormControlLabel> */}
+          <div className="flex flex-col justify-center items-center *:m-1">
+            <Label className="dark:text-white">Single Player</Label>
+            <Checkbox
+              color='default'
+              checked={check.singlePlayer}
+              onChange={handleChange}
+              name='singlePlayer'
+            />
+          </div>
           {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
@@ -163,6 +113,10 @@ const Filters = props => {
               />
             }
             label='Cooperative'></FormControlLabel> */}
+            <div className="flex flex-col justify-center items-center *:m-1">
+              <Label className="dark:text-white">Coop</Label>
+              <Checkbox />
+            </div>
           {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
@@ -175,6 +129,10 @@ const Filters = props => {
               />
             }
             label='World Record'></FormControlLabel> */}
+            <div className="flex flex-col justify-center items-center *:m-1">
+              <Label className="dark:text-white">World Record</Label>
+              <Checkbox />
+            </div>
           {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
@@ -211,15 +169,11 @@ const Filters = props => {
               />
             }
             label='Submission'></FormControlLabel> */}
-        </form>
-        <Button
-          variant='outlined'
-          className={classes.apply}
-          onClick={handleOnClick}>
-          Apply
+          <Button
+            onClick={handleOnClick}>
+            <Search />Apply
         </Button>
-      </Toolbar>
-    </AppBar>
+        </form>
   )
 }
 

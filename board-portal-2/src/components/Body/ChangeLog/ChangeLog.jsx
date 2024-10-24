@@ -47,7 +47,7 @@ const ChangeLog = () => {
 
   console.log(filters)
   return (
-      <div className="flex flex-col p-4 *:my-2">
+      <div className="flex flex-col p-4 *:my-2 min-h-screen">
             <Filters
               themeStatus={themeContext.themeStatus}
               theme={themeContext.theme}

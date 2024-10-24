@@ -21,7 +21,7 @@ import { useStyles, CustomButton } from "./style.js";
 const Footer = () => {
   const classes = useStyles();
   return (
-    <div id='container-footer' className={classes.root}>
+    <div id='container-footer' className="fixed bottom-0 w-full">
       <AppBar color='secondary' position='static'>
         <Toolbar className={classes.toolbar}>
           <Grid container justify='space-around' alignContent='center'>
