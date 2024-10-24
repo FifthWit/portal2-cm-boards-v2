@@ -46,34 +46,25 @@ const ChangeLog = () => {
   }
 
   console.log(filters)
-
   return (
-    <Paper id='ChangeLog' className={classes.bodyPage}>
-      <Grid container direction='column'>
-        <Grid item style={{ paddingRight: "2em", paddingTop: "2em" }}>
-          <Filters
-            themeStatus={themeContext.themeStatus}
-            theme={themeContext.theme}
-            onChangeFilters={handleChangeFilters}
-          />
-        </Grid>
-        <Grid item>
-          <Graph
-            themeContext={themeContext}
-            filters={filters}
-            changelogData={changelogData}
-          />
-        </Grid>
-        <Grid item>
-          <ScoreLists
-            filters={filters}
-            changelogData={changelogData}
-            themeStatus={themeContext.themeStatus}
-            theme={themeContext.theme}
-          />
-        </Grid>
-      </Grid>
-    </Paper>
+      <div className="flex flex-col p-4 *:my-2">
+            <Filters
+              themeStatus={themeContext.themeStatus}
+              theme={themeContext.theme}
+              onChangeFilters={handleChangeFilters}
+            />
+            <Graph
+              themeContext={themeContext}
+              filters={filters}
+              changelogData={changelogData}
+            />
+            <ScoreLists
+              filters={filters}
+              changelogData={changelogData}
+              themeStatus={themeContext.themeStatus}
+              theme={themeContext.theme}
+            />
+      </div>
   )
 }
 
