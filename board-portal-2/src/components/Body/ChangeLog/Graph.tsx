@@ -58,7 +58,6 @@ export function Graph() {
               tickFormatter={(value) => value}
             />
             <ChartTooltip
-              cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
             <Bar dataKey="submissions" fill="var(--color-submissions)" radius={8} />

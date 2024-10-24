@@ -7,12 +7,18 @@ import {
   Toolbar,
   Typography,
   Button,
-  Checkbox,
   FormGroup,
   FormControlLabel
 } from "@material-ui/core"
 import React from "react"
 import { useStyles } from "./style"
+
+// Shadcn
+
+import { Checkbox } from "@/components/ui/checkbox"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+ 
 
 const Filters = props => {
   const classes = useStyles()
@@ -64,11 +70,16 @@ const Filters = props => {
           : "rgb(41, 49, 62)"
       }}>
       <Toolbar>
-        <form style={{ width: "100%", margin: props.theme.spacing(1) }}>
-          <TextField
+        <form style={{margin: props.theme.spacing(1) }} className="w-full flex flex-row items-center">
+          {/* <TextField
             onChange={handleNickname}
             className={classes.textField}
-            label='Nickname'></TextField>
+            label='Nickname'></TextField> */}
+
+            <div className="flex flex-col">
+              <Label>Nickname</Label>
+              <Input className="w-fit" placeholder="Nickname" />
+            </div>
           <TextField
             className={classes.textField}
             onChange={handleSteam}
@@ -128,7 +139,7 @@ const Filters = props => {
               Chamber 2
             </MenuItem>
           </Menu>
-          <FormControlLabel
+          {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
             control={
@@ -139,8 +150,8 @@ const Filters = props => {
                 name='singlePlayer'
               />
             }
-            label='Single Player'></FormControlLabel>
-          <FormControlLabel
+            label='Single Player'></FormControlLabel> */}
+          {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
             control={
@@ -151,8 +162,8 @@ const Filters = props => {
                 name='cooperative'
               />
             }
-            label='Cooperative'></FormControlLabel>
-          <FormControlLabel
+            label='Cooperative'></FormControlLabel> */}
+          {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
             control={
@@ -163,8 +174,8 @@ const Filters = props => {
                 name='worldRecord'
               />
             }
-            label='World Record'></FormControlLabel>
-          <FormControlLabel
+            label='World Record'></FormControlLabel> */}
+          {/* <FormControlLabel
             className={classes.checkbox}
             labelPlacement='top'
             control={
@@ -199,7 +210,7 @@ const Filters = props => {
                 name='submission'
               />
             }
-            label='Submission'></FormControlLabel>
+            label='Submission'></FormControlLabel> */}
         </form>
         <Button
           variant='outlined'
